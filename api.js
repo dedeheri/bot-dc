@@ -1,8 +1,11 @@
+require("dotenv").config();
+
 const axios = require("axios");
+const url = process.env.BASE_URL;
 
 async function getBookies() {
   try {
-    const bookies = await axios.get("http://localhost:1232/api/bookies");
+    const bookies = await axios.get(`${url}/api/bookies`);
 
     //   maping api as sting
     let data = "";
@@ -19,7 +22,7 @@ async function getBookies() {
 
 async function getReference() {
   try {
-    const response = await axios.get("http://localhost:1232/api/reference");
+    const response = await axios.get(`${url}/api/reference`);
 
     let data = [];
     response.data.result.map((res) => {
