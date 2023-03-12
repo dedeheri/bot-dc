@@ -30,7 +30,10 @@ client.on("messageCreate", (message) => {
       const reference = getReference();
       reference
         .then((r) => message.reply(r))
-        .catch((e) => message.reply("Terjadi Kesalahan"));
+        .catch((e) => {
+          console.log(e);
+          message.reply("Terjadi Kesalahan");
+        });
       break;
 
     case "fafa":
